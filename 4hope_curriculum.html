@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curriculum — 4Hope Kenya Mentorship Program</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #0A4D8C;
+    --green: #1A8C4E;
+    --light-blue: #5BB8F5;
+    --light-green: #5DD68A;
+    --white: #F8FFFE;
+    --dark: #071A0F;
+    --card-bg: rgba(255,255,255,0.07);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--dark); color: var(--white); overflow-x: hidden; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 5%;
+    background: rgba(7,26,15,0.9); backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(91,214,138,0.15);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 900;
+    background: linear-gradient(135deg, var(--light-green), var(--light-blue));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: rgba(248,255,254,0.7); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--light-green); }
+
+  .hero {
+    min-height: 50vh; display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden; padding: 8rem 5% 4rem; text-align: center;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(10,77,140,0.4) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 30%, rgba(26,140,78,0.3) 0%, transparent 50%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(91,214,138,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(91,214,138,0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 800px; }
+  .hero-badge {
+    display: inline-block; padding: 0.4rem 1.2rem;
+    border: 1px solid rgba(91,214,138,0.4); border-radius: 100px;
+    font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--light-green); margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900; line-height: 1.1; margin-bottom: 1rem;
+  }
+  .hero h1 span {
+    background: linear-gradient(135deg, var(--light-green), var(--light-blue));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .hero-sub { font-size: 1.1rem; color: rgba(248,255,254,0.7); line-height: 1.7; max-width: 600px; margin: 0 auto; }
+
+  section { padding: 5rem 5%; }
+  .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--light-green); margin-bottom: 1rem; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; line-height: 1.1; margin-bottom: 2rem; }
+  .section-title span {
+    background: linear-gradient(135deg, var(--light-green), var(--light-blue));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+
+  /* UNITS */
+  .units { max-width: 1200px; margin: 0 auto; }
+  .units-header { text-align: center; margin-bottom: 4rem; }
+  .units-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+
+  .unit-card {
+    background: var(--card-bg); border: 1px solid rgba(91,214,138,0.15);
+    border-radius: 16px; padding: 2rem; transition: all 0.3s; position: relative; overflow: hidden;
+  }
+  .unit-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--light-green), var(--light-blue));
+    transform: scaleX(0); transition: transform 0.3s;
+  }
+  .unit-card:hover::before { transform: scaleX(1); }
+  .unit-card:hover { border-color: rgba(91,214,138,0.4); transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
+
+  .unit-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+  .unit-number {
+    width: 48px; height: 48px; border-radius: 12px; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--blue), var(--green));
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 900;
+  }
+  .unit-title-wrap {}
+  .unit-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--light-blue); margin-bottom: 0.2rem; }
+  .unit-name { font-weight: 700; font-size: 1.1rem; }
+
+  .unit-topics { list-style: none; }
+  .unit-topics li {
+    padding: 0.4rem 0; font-size: 0.9rem; color: rgba(248,255,254,0.7);
+    border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; gap: 0.5rem;
+  }
+  .unit-topics li:last-child { border-bottom: none; }
+  .unit-topics li::before { content: '→'; color: var(--light-green); font-size: 0.8rem; flex-shrink: 0; }
+
+  .unit-status {
+    display: inline-block; padding: 0.3rem 0.8rem; border-radius: 100px;
+    font-size: 0.75rem; font-weight: 600; margin-top: 1rem;
+  }
+  .status-complete { background: rgba(91,214,138,0.2); color: var(--light-green); }
+  .status-current { background: rgba(91,184,245,0.2); color: var(--light-blue); }
+  .status-upcoming { background: rgba(255,255,255,0.1); color: rgba(248,255,254,0.5); }
+
+  /* GAME SECTION */
+  .game-section {
+    background: linear-gradient(135deg, rgba(10,77,140,0.3), rgba(26,140,78,0.2));
+    border: 1px solid rgba(91,214,138,0.2); border-radius: 20px;
+    padding: 3rem; text-align: center; max-width: 800px; margin: 0 auto;
+  }
+  .game-section h3 { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; margin-bottom: 1rem; }
+  .game-section p { color: rgba(248,255,254,0.7); line-height: 1.7; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; margin-bottom: 2rem; }
+
+  .btn-primary {
+    display: inline-block; padding: 0.9rem 2.2rem; background: linear-gradient(135deg, var(--green), var(--blue));
+    color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 0.95rem;
+    transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 20px rgba(26,140,78,0.3);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(26,140,78,0.4); }
+
+  footer {
+    padding: 3rem 5%; border-top: 1px solid rgba(91,214,138,0.1);
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-logo {
+    font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 900;
+    background: linear-gradient(135deg, var(--light-green), var(--light-blue));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .footer-tagline { font-size: 0.85rem; color: rgba(248,255,254,0.4); }
+  .footer-right { font-size: 0.8rem; color: rgba(248,255,254,0.3); }
+
+  @media (max-width: 768px) {
+    .units-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    footer { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="4hope_website_v2.html" class="nav-logo">4Hope Kenya</a>
+  <ul class="nav-links">
+    <li><a href="4hope_website_v2.html#mission">Mission</a></li>
+    <li><a href="4hope_curriculum.html">Curriculum</a></li>
+    <li><a href="4hope_partners.html">Partners</a></li>
+    <li><a href="4hope_donate.html">Donate</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">📚 Mobile-First Engineering Education</div>
+    <h1>Our <span>Curriculum</span></h1>
+    <p class="hero-sub">8 units of engineering education delivered entirely through phones to 250+ orphanage students in Nairobi, Kenya.</p>
+  </div>
+</section>
+
+<section>
+  <div class="units">
+    <div class="units-header">
+      <p class="section-label">8 Units — Mobile First</p>
+      <h2 class="section-title">What Our Students <span>Learn</span></h2>
+    </div>
+    <div class="units-grid">
+
+      <div class="unit-card">
+        <div class="unit-header">
+          <div class="unit-number">1</div>
+          <div class="unit-title-wrap">
+            <div class="unit-label">Unit 1</div>
+            <div class="unit-name">Bike Care</div>
+          </div>
+        </div>
+        <ul class="unit-topics">
+          <li>Bike Safety</li>
+          <li>Mechanics and Physics</li>
+          <li>Review Questions</li>
+        </ul>
+        <span class="unit-status status-complete">✅ Complete</span>
+      </div>
+
+      <div class="unit-card">
+        <div class="unit-header">
+          <div class="unit-number">2</div>
+          <div class="unit-title-wrap">
+            <div class="unit-label">Unit 2</div>
+            <div class="unit-name">Operation and Bike Principles</div>
+          </div>
+        </div>
+        <ul class="unit-topics">
+          <li>Bike Parts</li>
+          <li>Bike's General Use Cases</li>
+          <li>Different Types of Bikes</li>
+          <li>Forces and Torques</li>
+          <li>Drivetrain Gears and Rotational Momentum</li>
+          <li>Environmental Impact</li>
+        </ul>
+        <span class="unit-status status-complete">✅ Complete</span>
+      </div>
+
+      <div class="unit-card">
+        <div class="unit-header">
+          <div class="unit-number">3</div>
+          <div class="unit-title-wrap">
+            <div class="unit-label">Unit 3</div>
+            <div class="unit-name">Air Resistance</div>
+          </div>
+        </div>
+        <ul class="unit-topics">
+          <li>Air Resistance and Science</li>
+          <li>Air Resistance in Bikes</li>
+          <li>Air Resistance Bike Parts</li>
+        </ul>
+        <span class="unit-status status-complete">✅ Complete</span>
+      </div>
+
+      <div class="unit-card">
+        <div class="unit-header">
+          <div class="unit-number">4</div>
+          <div class="unit-title-wrap">
+            <div class="unit-label">Unit 4</div>
+            <div class="unit-name">E-Bikes</div>
+          </div>
+        </div>
+        <ul class="unit-topics">
+          <li>E-Bike Parts</li>
+          <li>Power and Electricity of E-Bikes</li>
+          <li>E-Bike Motors</li>
+          <li>Regenerative E-Bike Brakes</li>
+          <li>Controller, Sensor, Input System</li>
+        </ul>
+        <span class="unit-status status-complete">✅ Complete</span>
+      </div>
+
+      <div class="unit-card">
+        <div class="unit-header">
+          <div class="unit-number">5</div>
+          <div class="unit-title-wrap">
+            <div class="unit-label">Unit 5</div>
+            <div class="unit-name">Mechanics</div>
+          </div>
+        </div>
+        <ul class="unit-topics">
+          <li>Intro to Tools</li>
+          <li>Fix A Flat</li>
+          <li>Brake Repairs</li>
+          <li>Gear and Shifting Repair</li>
+          <li>Bearing System Disassembly</li>
+          <li>Wheel Truing</li>
+        </ul>
+        <span class="unit-status status-current">🔄 In Delivery — Stuy Fusion Teaching</span>
+      </div>
+
+      <div class="unit-card">
+        <div class="unit-header">
+          <div class="unit-number">6</div>
+          <div class="unit-title-wrap">
+            <div class="unit-label">Unit 6</div>
+            <div class="unit-name">Materials and Design Engineering</div>
+          </div>
+        </div>
+        <ul class="unit-topics">
+          <li>Frame Geometry and Materials</li>
+          <li>Material Science</li>
+          <li>Design Trade Offs</li>
+        </ul>
+        <span class="unit-status status-current">🔄 Currently Active</span>
+      </div>
+
+      <div class="unit-card">
+        <div class="unit-header">
+          <div class="unit-number">7</div>
+          <div class="unit-title-wrap">
+            <div class="unit-label">Unit 7</div>
+            <div class="unit-name">Wheel Engineering</div>
+          </div>
+        </div>
+        <ul class="unit-topics">
+          <li>Spoke Patterns and Lacing Styles</li>
+          <li>Rims and Materials Section</li>
+          <li>Wheel Dish and Local Distribution</li>
+          <li>Suspension Fork and Shock Absorptions</li>
+        </ul>
+        <span class="unit-status status-upcoming">📅 Upcoming</span>
+      </div>
+
+      <div class="unit-card">
+        <div class="unit-header">
+          <div class="unit-number">8</div>
+          <div class="unit-title-wrap">
+            <div class="unit-label">Unit 8</div>
+            <div class="unit-name">Future of Bikes</div>
+          </div>
+        </div>
+        <ul class="unit-topics">
+          <li>Human Centered Bike Design</li>
+          <li>Smart Tech Systems</li>
+          <li>Sustainability and Environment</li>
+          <li>Urban Mobility and Infrastructure</li>
+          <li>Accessibility and Transportation</li>
+          <li>Transportation Trends</li>
+        </ul>
+        <span class="unit-status status-upcoming">📅 Upcoming</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="game-section">
+    <h3>🚲 Think Like an <span style="background: linear-gradient(135deg, #5DD68A, #5BB8F5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Engineer</span></h3>
+    <p>Try our interactive Bike Builder game — the same tool we use to teach Kenya students real engineering decisions about frame materials, wheel sizes, brakes and more.</p>
+    <a href="https://blue-nona-70.tiiny.site" target="_blank" class="btn-primary">🎮 Play the Bike Builder Game</a>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="footer-logo">4Hope Kenya</div>
+    <div class="footer-tagline">Same potential. Different access.</div>
+  </div>
+  <div class="footer-right">Built by NYC students. For Nairobi students. 🌍</div>
+</footer>
+
+</body>
+</html>
