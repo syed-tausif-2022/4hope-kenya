@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Services — 4Hope Kenya</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#0A4D8C;--green:#1A8C4E;--light-blue:#5BB8F5;--light-green:#5DD68A;--white:#F8FFFE;--dark:#071A0F;--card-bg:rgba(255,255,255,0.07)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--white);overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 5%;background:rgba(7,26,15,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(91,214,138,0.15)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;background:linear-gradient(135deg,var(--light-green),var(--light-blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{color:rgba(248,255,254,0.7);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.3s}
+.nav-links a:hover{color:var(--light-green)}
+section{padding:5rem 5%}.inner{max-width:1100px;margin:0 auto}
+.section-label{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--light-green);margin-bottom:1rem}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;line-height:1.1;margin-bottom:1.5rem}
+.section-title span{background:linear-gradient(135deg,var(--light-green),var(--light-blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(10,77,140,0.4) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(26,140,78,0.3) 0%,transparent 50%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(91,214,138,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(91,214,138,0.05) 1px,transparent 1px);background-size:60px 60px}
+.btn-primary{display:inline-block;padding:0.9rem 2.2rem;background:linear-gradient(135deg,var(--green),var(--blue));color:white;text-decoration:none;border-radius:8px;font-weight:600;font-size:0.95rem;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 4px 20px rgba(26,140,78,0.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(26,140,78,0.4)}
+.btn-secondary{display:inline-block;padding:0.9rem 2.2rem;border:1px solid rgba(91,214,138,0.4);color:var(--light-green);text-decoration:none;border-radius:8px;font-weight:600;font-size:0.95rem;transition:all 0.2s}
+.btn-secondary:hover{background:rgba(91,214,138,0.1)}
+.card{background:var(--card-bg);border:1px solid rgba(91,214,138,0.15);border-radius:16px;padding:2rem;transition:all 0.3s}
+.card:hover{border-color:rgba(91,214,138,0.4);transform:translateY(-3px);box-shadow:0 15px 40px rgba(0,0,0,0.3)}
+footer{padding:3rem 5%;border-top:1px solid rgba(91,214,138,0.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:900;background:linear-gradient(135deg,var(--light-green),var(--light-blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.footer-tagline{font-size:0.85rem;color:rgba(248,255,254,0.4)}.footer-right{font-size:0.8rem;color:rgba(248,255,254,0.3)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){.nav-links{display:none}footer{flex-direction:column;text-align:center}}
+</style>
+<style>
+.hero{min-height:60vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:8rem 5% 4rem;text-align:center}
+.hero-content{position:relative;z-index:2;max-width:800px}
+.hero-badge{display:inline-block;padding:0.4rem 1.2rem;border:1px solid rgba(91,184,245,0.4);border-radius:100px;font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--light-blue);margin-bottom:1.5rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;line-height:1.1;margin-bottom:1rem}
+.hero h1 span{background:linear-gradient(135deg,var(--light-blue),var(--light-green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.mission-banner{background:linear-gradient(135deg,rgba(26,140,78,0.3),rgba(10,77,140,0.3));border:1px solid rgba(91,214,138,0.3);border-radius:16px;padding:2rem;text-align:center;margin-bottom:4rem}
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
+.service-card{background:var(--card-bg);border:1px solid rgba(91,184,245,0.15);border-radius:20px;padding:2.5rem;transition:all 0.3s;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--light-blue),var(--light-green));transform:scaleX(0);transition:transform 0.3s}
+.service-card:hover::before{transform:scaleX(1)}
+.service-card:hover{border-color:rgba(91,184,245,0.4);transform:translateY(-4px)}
+.service-tag{display:inline-block;padding:0.3rem 0.8rem;border-radius:100px;font-size:0.75rem;font-weight:600;margin-bottom:1.5rem}
+.tag-live{background:rgba(91,214,138,0.2);color:var(--light-green)}
+.tag-soon{background:rgba(91,184,245,0.2);color:var(--light-blue)}
+.service-features{list-style:none;margin-bottom:2rem}
+.service-features li{padding:0.4rem 0;font-size:0.9rem;color:rgba(248,255,254,0.7);display:flex;align-items:center;gap:0.5rem;border-bottom:1px solid rgba(255,255,255,0.05)}
+.service-features li:last-child{border-bottom:none}
+.service-features li::before{content:'→';color:var(--light-blue);flex-shrink:0}
+.funding-flow{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;margin:3rem 0}
+.flow-step{background:var(--card-bg);border:1px solid rgba(91,214,138,0.2);border-radius:12px;padding:1.5rem;text-align:center;flex:1;min-width:150px;max-width:200px}
+.flow-arrow{font-size:1.5rem;color:var(--light-green)}
+@media(max-width:768px){.services-grid{grid-template-columns:1fr}.funding-flow{flex-direction:column}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">4Hope Kenya</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="curriculum.html">Curriculum</a></li><li><a href="seniors.html">Seniors</a></li>
+    <li><a href="ai-services.html">AI Services</a></li><li><a href="partners.html">Partners</a></li>
+    <li><a href="donate.html">Donate</a></li>
+  </ul>
+</nav>
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🤖 AI Services for Small Businesses</div>
+    <h1>AI Agents That <span>Work for You</span></h1>
+    <p style="font-size:1.1rem;color:rgba(248,255,254,0.7);line-height:1.7;max-width:600px;margin:0 auto 1.5rem">Student-built AI voice agents for small businesses. Every dollar earned funds engineering education and bike builds for orphanage students in Kenya.</p>
+    <div style="font-size:0.95rem;color:var(--light-green);font-weight:600;padding:0.8rem 1.5rem;border:1px solid rgba(91,214,138,0.3);border-radius:8px;display:inline-block">💚 100% of revenue funds the 4Hope Kenya bike build</div>
+  </div>
+</section>
+
+<section>
+  <div class="inner">
+    <div class="mission-banner">
+      <p style="color:rgba(248,255,254,0.8);line-height:1.7">These AI services are built and sold by 4Hope Kenya student engineers to fund our mission. <strong style="color:var(--light-green)">Every client we serve directly funds bike parts and engineering education for orphanage students in Nairobi.</strong> You get a powerful AI solution. They get a bike that changes their life.</p>
+    </div>
+    <p class="section-label" style="text-align:center">Our AI Agents</p>
+    <h2 class="section-title" style="text-align:center;margin-bottom:2.5rem">Built by Students. <span>Ready for Business.</span></h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-tag tag-live">✅ Available Now</span>
+        <div style="font-size:3rem;margin-bottom:1rem">📞</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;margin-bottom:0.8rem">HVAC Voice Call Agent</div>
+        <div style="color:rgba(248,255,254,0.7);line-height:1.7;font-size:0.95rem;margin-bottom:1.5rem">Never miss an after-hours call again. Our AI voice agent answers calls, books appointments, answers FAQs and qualifies leads 24/7 — so you wake up to booked jobs not missed opportunities.</div>
+        <ul class="service-features">
+          <li>Answers calls 24/7 — even at 2AM</li>
+          <li>Books appointments automatically</li>
+          <li>Answers common HVAC questions</li>
+          <li>Qualifies and routes leads</li>
+          <li>Natural conversational voice</li>
+          <li>Works with your existing phone number</li>
+        </ul>
+        <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;background:linear-gradient(135deg,var(--light-blue),var(--light-green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:0.5rem">Contact for Pricing</div>
+        <div style="font-size:0.8rem;color:rgba(248,255,254,0.4);margin-bottom:1.5rem">Revenue funds 4Hope Kenya bike build 🚲</div>
+        <a href="mailto:mentorshipsyed@gmail.com?subject=HVAC AI Agent Inquiry" class="btn-primary" style="width:100%;text-align:center;display:block">Get a Free Demo</a>
+      </div>
+      <div class="service-card" style="opacity:0.75">
+        <span class="service-tag tag-soon">🔄 Coming Soon</span>
+        <div style="font-size:3rem;margin-bottom:1rem">🤖</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;margin-bottom:0.8rem">AI Agent #2</div>
+        <div style="color:rgba(248,255,254,0.7);line-height:1.7;font-size:0.95rem;margin-bottom:1.5rem">Our second AI agent is currently in development. We are building affordable automation solutions for small businesses that need help without the enterprise price tag.</div>
+        <ul class="service-features">
+          <li>Built for small businesses</li>
+          <li>Affordable and accessible</li>
+          <li>Student engineered and tested</li>
+          <li>Revenue funds 4Hope Kenya</li>
+        </ul>
+        <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:rgba(248,255,254,0.4);margin-bottom:0.5rem">In Development</div>
+        <div style="font-size:0.8rem;color:rgba(248,255,254,0.4);margin-bottom:1.5rem">Join the waitlist to be first to know</div>
+        <a href="mailto:mentorshipsyed@gmail.com?subject=AI Agent Waitlist" class="btn-primary" style="width:100%;text-align:center;display:block">Join Waitlist</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:rgba(26,140,78,0.08);border-top:1px solid rgba(91,214,138,0.1);border-bottom:1px solid rgba(91,214,138,0.1)">
+  <div style="max-width:900px;margin:0 auto;text-align:center">
+    <p class="section-label">The Mission Connection</p>
+    <h2 class="section-title">How Your Business <span>Helps Kenya</span></h2>
+    <p style="color:rgba(248,255,254,0.7);line-height:1.8;margin-bottom:2rem">When you hire 4Hope Kenya for AI services you are not just solving a business problem. You are directly funding engineering education and bike builds for orphanage students in Nairobi.</p>
+    <div class="funding-flow">
+      <div class="flow-step"><div style="font-size:2rem;margin-bottom:0.5rem">💼</div><div style="font-weight:600;font-size:0.9rem;margin-bottom:0.3rem">You Hire Us</div><div style="font-size:0.8rem;color:rgba(248,255,254,0.5)">AI agent built for your business</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div style="font-size:2rem;margin-bottom:0.5rem">💰</div><div style="font-weight:600;font-size:0.9rem;margin-bottom:0.3rem">Revenue Generated</div><div style="font-size:0.8rem;color:rgba(248,255,254,0.5)">100% goes to 4Hope mission</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div style="font-size:2rem;margin-bottom:0.5rem">🔩</div><div style="font-weight:600;font-size:0.9rem;margin-bottom:0.3rem">Parts Purchased</div><div style="font-size:0.8rem;color:rgba(248,255,254,0.5)">Nairobi suppliers sourced</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step"><div style="font-size:2rem;margin-bottom:0.5rem">🚲</div><div style="font-weight:600;font-size:0.9rem;margin-bottom:0.3rem">Bike Built</div><div style="font-size:0.8rem;color:rgba(248,255,254,0.5)">Ferdinand rides to school</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div><div class="footer-logo">4Hope Kenya</div><div class="footer-tagline">Same potential. Different access.</div></div>
+  <div class="footer-right">Built by NYC students. For Nairobi students. 🌍</div>
+</footer>
+</body>
+</html>

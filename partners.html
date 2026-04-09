@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partners — 4Hope Kenya</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#0A4D8C;--green:#1A8C4E;--light-blue:#5BB8F5;--light-green:#5DD68A;--white:#F8FFFE;--dark:#071A0F;--card-bg:rgba(255,255,255,0.07)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--white);overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 5%;background:rgba(7,26,15,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(91,214,138,0.15)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;background:linear-gradient(135deg,var(--light-green),var(--light-blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{color:rgba(248,255,254,0.7);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.3s}
+.nav-links a:hover{color:var(--light-green)}
+section{padding:5rem 5%}.inner{max-width:1100px;margin:0 auto}
+.section-label{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--light-green);margin-bottom:1rem}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;line-height:1.1;margin-bottom:1.5rem}
+.section-title span{background:linear-gradient(135deg,var(--light-green),var(--light-blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(10,77,140,0.4) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(26,140,78,0.3) 0%,transparent 50%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(91,214,138,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(91,214,138,0.05) 1px,transparent 1px);background-size:60px 60px}
+.btn-primary{display:inline-block;padding:0.9rem 2.2rem;background:linear-gradient(135deg,var(--green),var(--blue));color:white;text-decoration:none;border-radius:8px;font-weight:600;font-size:0.95rem;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 4px 20px rgba(26,140,78,0.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(26,140,78,0.4)}
+.btn-secondary{display:inline-block;padding:0.9rem 2.2rem;border:1px solid rgba(91,214,138,0.4);color:var(--light-green);text-decoration:none;border-radius:8px;font-weight:600;font-size:0.95rem;transition:all 0.2s}
+.btn-secondary:hover{background:rgba(91,214,138,0.1)}
+.card{background:var(--card-bg);border:1px solid rgba(91,214,138,0.15);border-radius:16px;padding:2rem;transition:all 0.3s}
+.card:hover{border-color:rgba(91,214,138,0.4);transform:translateY(-3px);box-shadow:0 15px 40px rgba(0,0,0,0.3)}
+footer{padding:3rem 5%;border-top:1px solid rgba(91,214,138,0.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:900;background:linear-gradient(135deg,var(--light-green),var(--light-blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.footer-tagline{font-size:0.85rem;color:rgba(248,255,254,0.4)}.footer-right{font-size:0.8rem;color:rgba(248,255,254,0.3)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){.nav-links{display:none}footer{flex-direction:column;text-align:center}}
+</style>
+<style>
+.hero{min-height:50vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:8rem 5% 4rem;text-align:center}
+.hero-content{position:relative;z-index:2;max-width:800px}
+.hero-badge{display:inline-block;padding:0.4rem 1.2rem;border:1px solid rgba(91,214,138,0.4);border-radius:100px;font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--light-green);margin-bottom:1.5rem}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;line-height:1.1;margin-bottom:1rem}
+.hero h1 span{background:linear-gradient(135deg,var(--light-green),var(--light-blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.partners-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;max-width:1100px;margin:0 auto}
+.partner-card{background:var(--card-bg);border:1px solid rgba(91,214,138,0.15);border-radius:20px;padding:2.5rem;transition:all 0.3s}
+.partner-card:hover{border-color:rgba(91,214,138,0.4);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.3)}
+.partner-type{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--light-blue);margin-bottom:0.8rem}
+.partner-name{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;margin-bottom:0.5rem}
+.partner-location{font-size:0.85rem;color:rgba(248,255,254,0.4);margin-bottom:1.5rem}
+.partner-desc{color:rgba(248,255,254,0.7);line-height:1.7;font-size:0.95rem;margin-bottom:1.5rem}
+.partner-role{display:inline-block;padding:0.4rem 1rem;border-radius:100px;background:rgba(91,214,138,0.15);color:var(--light-green);font-size:0.8rem;font-weight:600}
+.join-section{background:linear-gradient(135deg,rgba(10,77,140,0.3),rgba(26,140,78,0.2));border:1px solid rgba(91,214,138,0.25);border-radius:20px;padding:3rem;text-align:center;max-width:700px;margin:0 auto}
+@media(max-width:768px){.partners-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">4Hope Kenya</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="curriculum.html">Curriculum</a></li><li><a href="seniors.html">Seniors</a></li>
+    <li><a href="ai-services.html">AI Services</a></li><li><a href="partners.html">Partners</a></li>
+    <li><a href="donate.html">Donate</a></li>
+  </ul>
+</nav>
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🤝 Building Together</div>
+    <h1>Our <span>Partners</span></h1>
+    <p style="font-size:1.1rem;color:rgba(248,255,254,0.7);line-height:1.7">4Hope Kenya is powered by partnerships across NYC and Nairobi. Every partner plays a real role in building something that lasts.</p>
+  </div>
+</section>
+
+<section>
+  <div class="inner">
+    <p class="section-label" style="text-align:center">Community and Institutional Partners</p>
+    <h2 class="section-title" style="text-align:center;margin-bottom:3rem">Who We <span>Build With</span></h2>
+    <div class="partners-grid">
+      <div class="partner-card"><div style="font-size:2.5rem;margin-bottom:1rem">🏠</div><div class="partner-type">Community Partner — Kenya</div><div class="partner-name">Children's Garden Home</div><div class="partner-location">📍 Nairobi, Kenya</div><div class="partner-desc">Founded in 2001 by Moses and Sylvia Ndungu. Cared for over 2,000 orphaned children. Today nearly 250 children are in care. 4Hope serves their students directly — delivering STEM education and building bikes designed for their community.</div><span class="partner-role">🌍 Primary Beneficiary Partner</span></div>
+      <div class="partner-card"><div style="font-size:2.5rem;margin-bottom:1rem">🤖</div><div class="partner-type">Teaching Partner — NYC</div><div class="partner-name">Stuy Fusion FTC Team 479</div><div class="partner-location">📍 Stuyvesant High School, NYC</div><div class="partner-desc">Award-winning FIRST Tech Challenge robotics team. Stuy Fusion delivers CAD and coding lessons to our Kenya students for Unit 5 Mechanics. They also provide engineering mentorship through their professional mentor network.</div><span class="partner-role">🔧 CAD and Coding Teaching Partner</span></div>
+      <div class="partner-card"><div style="font-size:2.5rem;margin-bottom:1rem">🏛️</div><div class="partner-type">Community Partner — NYC</div><div class="partner-name">Queens Community House</div><div class="partner-location">📍 Jackson Heights, Queens, NYC</div><div class="partner-desc">Queens Community House provides community support across Jackson Heights. 4Hope partners with QCH to deliver tech literacy education to seniors and underserved community members. Contact: Alma Reyes — 347-785-8888.</div><span class="partner-role">🌆 NYC Community Outreach Partner</span></div>
+      <div class="partner-card"><div style="font-size:2.5rem;margin-bottom:1rem">💜</div><div class="partner-type">Community Partner — NYC</div><div class="partner-name">Creando Algo Especial</div><div class="partner-location">📍 New York City — Est. 2016</div><div class="partner-desc">A nonprofit organization supporting people with disabilities and the neurodivergent community. 4Hope works alongside Creando Algo Especial in serving Queens community members through inclusive tech education and outreach.</div><span class="partner-role">♿ Inclusive Community Partner</span></div>
+      <div class="partner-card"><div style="font-size:2.5rem;margin-bottom:1rem">⚙️</div><div class="partner-type">Engineering Partner</div><div class="partner-name">Engineers Without Borders USA</div><div class="partner-location">📍 USA — Remote</div><div class="partner-desc">EWB-USA connects 4Hope with professional mechanical engineers who review our bike designs and provide technical guidance. Their expertise ensures our $197 mountain bike is safe, durable and genuinely built for Kenyan terrain.</div><span class="partner-role">🔩 Engineering Mentor Partner</span></div>
+      <div class="partner-card"><div style="font-size:2.5rem;margin-bottom:1rem">📚</div><div class="partner-type">Venue Partner — NYC</div><div class="partner-name">Poetshouse Library</div><div class="partner-location">📍 NYC</div><div class="partner-desc">Poetshouse is where Syed works and builds community. As Technical Operations and Curator volunteer, 4Hope has used Poetshouse as a base for community outreach and poetry events connecting the arts with the mission.</div><span class="partner-role">📖 Community Venue Partner</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="join-section">
+    <h3 style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;margin-bottom:1rem">Want to <span style="background:linear-gradient(135deg,#5DD68A,#5BB8F5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Partner</span> with Us?</h3>
+    <p style="color:rgba(248,255,254,0.7);line-height:1.7;margin-bottom:2rem">We are always looking for organizations, schools and individuals who want to support engineering education for underserved youth. If you have skills, resources or connections — let us talk.</p>
+    <a href="mailto:mentorshipsyed@gmail.com" class="btn-primary">Get in Touch</a>
+  </div>
+</section>
+
+<footer>
+  <div><div class="footer-logo">4Hope Kenya</div><div class="footer-tagline">Same potential. Different access.</div></div>
+  <div class="footer-right">Built by NYC students. For Nairobi students. 🌍</div>
+</footer>
+</body>
+</html>
