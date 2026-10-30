@@ -2,6 +2,24 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
+<!--
+  ===================================================================
+  EDITING THIS SITE — quick guide for non-coders
+  ===================================================================
+  - Colors/fonts: edit styles.css — all colors are CSS variables at
+    the very top of that file.
+  - Impact numbers (students / partner sites / volunteers / cost):
+    edit the four <span class="stat-num"> values in the "Impact"
+    section below.
+  - Team names/roles: edit the "Team" section below.
+  - Open roles: edit the OPEN_ROLES array at the top of script.js.
+  - Social links / Google Form link: search this file for "TODO"
+    and replace the "#" placeholders with real URLs.
+  Full instructions: see README.md.
+  ===================================================================
+-->
+
 <!-- Google Search Console verification -->
 <meta name="google-site-verification" content="l2ZcmYYLfAJ-4KXimwmOGnVy_1JES9dyr0ShLRb9XYY">
 <!-- Google Analytics (GA4) -->
@@ -12,234 +30,289 @@
   gtag('js', new Date());
   gtag('config', 'G-86GRNK6C8G');
 </script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="4Hope Kenya Mentorship Program — Delivering a rigorous, mobile-first engineering curriculum to 23 orphanage students in Nairobi while engineering a mountain bike built for Kenyan terrain.">
-<title>4Hope Kenya Mentorship Program</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{--blue:#0A4D8C;--green:#1A8C4E;--light-blue:#5BB8F5;--light-green:#5DD68A;--white:#F8FFFE;--dark:#071A0F;--card-bg:rgba(255,255,255,0.07)}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--white);overflow-x:hidden}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 5%;background:rgba(7,26,15,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(91,214,138,0.15)}
-.nav-logo{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;background:linear-gradient(135deg,var(--light-green),var(--light-blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
-.nav-links{display:flex;gap:1.5rem;list-style:none}
-.nav-links a{color:rgba(248,255,254,0.7);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.3s}
-.nav-links a:hover{color:var(--light-green)}
-section{padding:5rem 5%}.inner{max-width:1100px;margin:0 auto}
-.section-label{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--light-green);margin-bottom:1rem}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;line-height:1.1;margin-bottom:1.5rem}
-.section-title span{background:linear-gradient(135deg,var(--light-green),var(--light-blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(10,77,140,0.4) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(26,140,78,0.3) 0%,transparent 50%)}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(91,214,138,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(91,214,138,0.05) 1px,transparent 1px);background-size:60px 60px}
-.btn-primary{display:inline-block;padding:0.9rem 2.2rem;background:linear-gradient(135deg,var(--green),var(--blue));color:white;text-decoration:none;border-radius:8px;font-weight:600;font-size:0.95rem;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 4px 20px rgba(26,140,78,0.3)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(26,140,78,0.4)}
-.btn-secondary{display:inline-block;padding:0.9rem 2.2rem;border:1px solid rgba(91,214,138,0.4);color:var(--light-green);text-decoration:none;border-radius:8px;font-weight:600;font-size:0.95rem;transition:all 0.2s}
-.btn-secondary:hover{background:rgba(91,214,138,0.1)}
-.card{background:var(--card-bg);border:1px solid rgba(91,214,138,0.15);border-radius:16px;padding:2rem;transition:all 0.3s}
-.card:hover{border-color:rgba(91,214,138,0.4);transform:translateY(-3px);box-shadow:0 15px 40px rgba(0,0,0,0.3)}
-footer{padding:3rem 5%;border-top:1px solid rgba(91,214,138,0.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:900;background:linear-gradient(135deg,var(--light-green),var(--light-blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.footer-tagline{font-size:0.85rem;color:rgba(248,255,254,0.4)}.footer-right{font-size:0.8rem;color:rgba(248,255,254,0.3)}
-.footer-links{display:flex;gap:1.2rem;font-size:0.8rem}
-.footer-links a{color:rgba(248,255,254,0.4);text-decoration:none;transition:color 0.3s}
-.footer-links a:hover{color:var(--light-green)}
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:768px){.nav-links{display:none}footer{flex-direction:column;text-align:center}}
-</style>
-<style>
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:8rem 5% 4rem;text-align:center}
-.hero-content{position:relative;z-index:2;max-width:900px}
-.hero-badge{display:inline-block;padding:0.4rem 1.2rem;border:1px solid rgba(91,214,138,0.4);border-radius:100px;font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--light-green);margin-bottom:2rem;animation:fadeUp 0.8s ease both}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,6rem);font-weight:900;line-height:1.05;margin-bottom:1.5rem;animation:fadeUp 0.8s ease 0.2s both}
-.hero h1 span{background:linear-gradient(135deg,var(--light-green),var(--light-blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-size:clamp(1rem,2.5vw,1.25rem);color:rgba(248,255,254,0.7);max-width:600px;margin:0 auto 2.5rem;line-height:1.7;animation:fadeUp 0.8s ease 0.4s both}
-.hero-stats{display:flex;justify-content:center;gap:3rem;margin-bottom:3rem;flex-wrap:wrap;animation:fadeUp 0.8s ease 0.6s both}
-.stat-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;background:linear-gradient(135deg,var(--light-green),var(--light-blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.stat-label{font-size:0.8rem;color:rgba(248,255,254,0.5);text-transform:uppercase;letter-spacing:0.1em}
-.hero-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.8s ease 0.8s both}
-.mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1100px;margin:0 auto}
-.mission-text p{color:rgba(248,255,254,0.7);line-height:1.8;font-size:1.05rem;margin-bottom:1.5rem}
-.mission-quote{border-left:3px solid var(--light-green);padding-left:1.5rem;margin:2rem 0;font-family:'Playfair Display',serif;font-size:1.3rem;font-style:italic;color:var(--white);line-height:1.6}
-.mission-cards{display:flex;flex-direction:column;gap:1rem}
-.card-icon{font-size:1.8rem;margin-bottom:0.5rem}
-.card-title{font-weight:600;margin-bottom:0.3rem;color:var(--light-green)}
-.card-text{font-size:0.9rem;color:rgba(248,255,254,0.6);line-height:1.6}
-.photos-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:1100px;margin:0 auto}
-.photo-card{position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(91,214,138,0.2)}
-.photo-card img{width:100%;height:300px;object-fit:cover;display:block;transition:transform 0.4s}
-.photo-card:hover img{transform:scale(1.03)}
-.photo-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(7,26,15,0.9));padding:1.5rem;font-size:0.9rem}
-.photo-tag{color:var(--light-green);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.3rem}
-.bike-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1100px;margin:0 auto}
-.bike-card{background:var(--card-bg);border:1px solid rgba(91,184,245,0.15);border-radius:16px;padding:2rem;text-align:center;transition:all 0.3s;position:relative;overflow:hidden}
-.bike-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--light-green),var(--light-blue));transform:scaleX(0);transition:transform 0.3s}
-.bike-card:hover::before{transform:scaleX(1)}
-.bike-card:hover{border-color:rgba(91,184,245,0.4);transform:translateY(-4px)}
-.bike-icon{font-size:2.5rem;margin-bottom:1rem}
-.bike-name{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;margin-bottom:0.5rem}
-.bike-desc{font-size:0.9rem;color:rgba(248,255,254,0.6);line-height:1.6;margin-bottom:1rem}
-.bike-status{display:inline-block;padding:0.3rem 0.8rem;border-radius:100px;font-size:0.75rem;font-weight:600}
-.status-done{background:rgba(91,214,138,0.2);color:var(--light-green)}
-.status-progress{background:rgba(91,184,245,0.2);color:var(--light-blue)}
-.students-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.students-text p{color:rgba(248,255,254,0.7);line-height:1.8;font-size:1.05rem;margin-bottom:1.5rem}
-.ferdinand-card{background:linear-gradient(135deg,rgba(10,77,140,0.4),rgba(26,140,78,0.3));border:1px solid rgba(91,214,138,0.25);border-radius:20px;padding:2.5rem}
-.ferdinand-label{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.2em;color:var(--light-blue);margin-bottom:1rem}
-.ferdinand-quote{font-family:'Playfair Display',serif;font-size:1.4rem;font-style:italic;line-height:1.6;margin-bottom:1.5rem}
-.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;max-width:1100px;margin:0 auto}
-.team-card{background:var(--card-bg);border:1px solid rgba(91,184,245,0.1);border-radius:12px;padding:1.5rem;text-align:center;transition:all 0.3s}
-.team-card:hover{border-color:rgba(91,184,245,0.3);transform:translateY(-3px)}
-.team-avatar{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--green));display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin:0 auto 0.8rem}
-.team-name{font-weight:600;font-size:0.95rem;margin-bottom:0.3rem}
-.team-role{font-size:0.8rem;color:var(--light-green)}
-.support-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:800px;margin:0 auto 3rem}
-.support-icon{font-size:2rem;margin-bottom:0.8rem}
-.contact-links{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:2rem}
-.contact-link{display:flex;align-items:center;gap:0.5rem;padding:0.8rem 1.5rem;background:var(--card-bg);border:1px solid rgba(91,214,138,0.2);border-radius:8px;color:var(--white);text-decoration:none;font-size:0.9rem;font-weight:500;transition:all 0.3s}
-.contact-link:hover{border-color:var(--light-green);background:rgba(91,214,138,0.1);transform:translateY(-2px)}
-@media(max-width:768px){.mission-grid,.students-inner,.photos-grid{grid-template-columns:1fr;gap:2rem}.bike-grid,.team-grid{grid-template-columns:1fr}.support-grid{grid-template-columns:1fr}.hero-stats{gap:1.5rem}}
-</style>
+<title>4Hope Kenya — Ride first. Then repair. Then engineer.</title>
+<meta name="description" content="4Hope Kenya is a youth-led nonprofit teaching students in Kenya to ride bicycles, maintain them, and build engineering skills, with a team of student volunteers.">
+<meta property="og:title" content="4Hope Kenya — Ride first. Then repair. Then engineer.">
+<meta property="og:description" content="A youth-led nonprofit teaching students in Kenya to ride bicycles, maintain them, and build engineering skills.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://4hopekenya.org/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://4hopekenya.org/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<nav>
-  <a href="index.html" class="nav-logo">4Hope Kenya</a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="index.html#team-section">Team</a></li>
-    <li><a href="curriculum.html">Curriculum</a></li>
-    <li><a href="seniors.html">Seniors</a></li>
-    <li><a href="ai-services.html">AI Services</a></li>
-    <li><a href="partners.html">Partners</a></li>
-    <li><a href="donate.html">Donate</a></li>
-  </ul>
-</nav>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-content">
-    <div class="hero-badge">🌍 NYC → Nairobi, Kenya</div>
-    <h1>Same Potential.<br><span>Different Access.</span></h1>
-    <p class="hero-sub">We deliver a rigorous, mobile-first engineering curriculum to 23 orphanage students in Nairobi — and we're engineering a mountain bike purpose-built for Kenyan terrain.</p>
-    <div class="hero-stats">
-      <div class="stat"><div class="stat-num">23</div><div class="stat-label">Students Served</div></div>
-      <div class="stat"><div class="stat-num">8</div><div class="stat-label">Curriculum Units</div></div>
-      <div class="stat"><div class="stat-num">8</div><div class="stat-label">Student Engineers</div></div>
-      <div class="stat"><div class="stat-num">161</div><div class="stat-label">Bike Budget</div></div>
+<header class="site-header">
+  <nav class="nav-inner" aria-label="Primary">
+    <a href="/" class="logo">
+      <span class="logo-mark" aria-hidden="true">4H</span>
+      4Hope Kenya
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#our-work">Our Work</a></li>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#get-involved">Get Involved</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <h1>Ride first. <span class="accent">Then repair.</span> Then engineer.</h1>
+      <p class="lead">4Hope Kenya teaches students in Kenya to ride bicycles, maintain them, and build engineering skills, with a team of student volunteers.</p>
+      <div class="hero-actions">
+        <a href="#get-involved" class="btn btn-primary">Volunteer with us</a>
+        <a href="#support" class="btn btn-secondary">Partner with us</a>
+      </div>
     </div>
-    <div class="hero-buttons">
-      <a href="donate.html" class="btn-primary">Support the Mission</a>
-      <a href="https://www.youtube.com/@4HopeKenyaMentorshipProgram" target="_blank" class="btn-secondary">Watch Our Lessons →</a>
+  </section>
+
+  <!-- ===== Audience split ===== -->
+  <section id="about" class="section-alt">
+    <div class="container">
+      <p class="section-label center">Get Involved</p>
+      <h2 class="section-title center">However you'd like to help, there's a place for you</h2>
+      <p class="section-intro center">4Hope Kenya is built and run by student volunteers. Here's how different people plug in.</p>
+      <div class="card-grid">
+        <div class="audience-card">
+          <div class="icon" aria-hidden="true">🛠️</div>
+          <h3>Volunteers</h3>
+          <ul>
+            <li>Work on real CAD and engineering projects</li>
+            <li>Help build and test curriculum content</li>
+            <li>Gain leadership experience on a real team</li>
+          </ul>
+          <a href="#get-involved" class="btn btn-secondary">See open roles</a>
+        </div>
+        <div class="audience-card">
+          <div class="icon" aria-hidden="true">🤝</div>
+          <h3>Partners</h3>
+          <ul>
+            <li>Bike shops, schools, and engineering organizations</li>
+            <li>Share tools, expertise, or training capacity</li>
+            <li>Help us reach more students in Kenya</li>
+          </ul>
+          <a href="#support" class="btn btn-secondary">Partner with us</a>
+        </div>
+        <div class="audience-card">
+          <div class="icon" aria-hidden="true">💛</div>
+          <h3>Supporters</h3>
+          <ul>
+            <li>Help fund bikes, parts, and curriculum delivery</li>
+            <li>Spread the word about our mission</li>
+            <li>Every dollar has a direct, visible purpose</li>
+          </ul>
+          <a href="#support" class="btn btn-secondary">Support the mission</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== How it works ===== -->
+  <section>
+    <div class="container">
+      <p class="section-label center">How It Works</p>
+      <h2 class="section-title center">Three steps, in order</h2>
+      <div class="path-steps">
+        <div class="path-step">
+          <div class="step-num">1</div>
+          <h3>Ride</h3>
+          <p>Students learn to ride safely before anything else — it's the foundation everything is built on.</p>
+        </div>
+        <div class="path-arrow" aria-hidden="true">→</div>
+        <div class="path-step">
+          <div class="step-num">2</div>
+          <h3>Repair</h3>
+          <p>Hands-on bike maintenance and repair skills — tools, parts, and real mechanical problem-solving.</p>
+        </div>
+        <div class="path-arrow" aria-hidden="true">→</div>
+        <div class="path-step">
+          <div class="step-num">3</div>
+          <h3>Engineer</h3>
+          <p>CAD design and engineering projects led by our volunteer engineering team.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Impact ===== -->
+  <section id="impact" class="section-alt">
+    <div class="container">
+      <p class="section-label center">Impact</p>
+      <h2 class="section-title center">Where things stand today</h2>
+      <div class="stat-grid">
+        <div class="stat-tile"><span class="stat-num">23</span><span class="stat-label">Students</span></div>
+        <div class="stat-tile"><span class="stat-num">2</span><span class="stat-label">Partner sites in Kenya</span></div>
+        <div class="stat-tile"><span class="stat-num">17</span><span class="stat-label">Volunteers</span></div>
+        <div class="stat-tile"><span class="stat-num">$176</span><span class="stat-label">Per bike</span></div>
+      </div>
+      <div class="impact-breakdown">
+        <h4>$176 builds one bike</h4>
+        <p>
+          <!-- TODO: fill in the real line-item breakdown, e.g. frame, wheels, brakes, shipping -->
+          Line-item cost breakdown coming soon.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Our Work ===== -->
+  <section id="our-work">
+    <div class="container">
+      <p class="section-label center">Our Work</p>
+      <h2 class="section-title center">What we actually build</h2>
+      <div class="card-grid">
+        <div class="work-card">
+          <div class="media">
+            <img src="assets/bike-render-1.png" alt="CAD render of a 4Hope Kenya mountain bike frame, side profile" loading="lazy">
+          </div>
+          <div class="body">
+            <h3>Bike Program</h3>
+            <p>Real bikes, engineered for Kenyan terrain, built from CAD designs through to delivery.</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="media">
+            <img src="assets/bike-render-2.png" alt="Isometric CAD render of a 4Hope Kenya bike design" loading="lazy">
+          </div>
+          <div class="body">
+            <h3>CAD &amp; Engineering Projects</h3>
+            <p>Our volunteer engineering team designs and iterates on every bike component before it's built.</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="media">
+            <div class="placeholder-box">📚 Curriculum photo placeholder</div>
+          </div>
+          <div class="body">
+            <h3>Curriculum</h3>
+            <p>An 8-unit, mobile-first curriculum covering bike mechanics, materials and design engineering.</p>
+            <a href="curriculum.html" class="btn btn-secondary">See the curriculum →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Team ===== -->
+  <section class="section-alt">
+    <div class="container">
+      <p class="section-label center">Team</p>
+      <h2 class="section-title center">Who's behind this</h2>
+      <div class="team-grid">
+        <div class="team-card"><div class="team-avatar" aria-hidden="true">S</div><div class="team-name">Syed</div><div class="team-role">Founder</div></div>
+        <div class="team-card"><div class="team-avatar" aria-hidden="true">T</div><div class="team-name">Twon</div><div class="team-role">Operations &amp; Kenya Lead</div></div>
+        <div class="team-card"><div class="team-avatar" aria-hidden="true">E</div><div class="team-name">Erica</div><div class="team-role">Engineering/CAD Lead</div></div>
+        <div class="team-card"><div class="team-avatar" aria-hidden="true">A</div><div class="team-name">Abrar</div><div class="team-role">Growth</div></div>
+        <div class="team-card"><div class="team-avatar" aria-hidden="true">F</div><div class="team-name">Faysal</div><div class="team-role">Finance</div></div>
+        <div class="team-card"><div class="team-avatar" aria-hidden="true">T</div><div class="team-name">Trevor</div><div class="team-role">Brand</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Get Involved ===== -->
+  <section id="get-involved">
+    <div class="container">
+      <p class="section-label center">Get Involved</p>
+      <h2 class="section-title center">Join the team</h2>
+      <p class="section-intro center">What you get out of it: real engineering experience, leadership on a working team, and a direct line to global impact.</p>
+      <div class="gain-list">
+        <div><strong>Real engineering</strong><br>Work on CAD and physical builds that ship to real students.</div>
+        <div><strong>Leadership</strong><br>Own a project area on a small, fast-moving volunteer team.</div>
+        <div><strong>Global impact</strong><br>See your work reach students in Kenya, not a slide deck.</div>
+      </div>
+      <ul class="roles-list" id="roles-list" hidden></ul>
+      <p class="roles-empty" id="roles-empty" hidden>No open roles right now — check back soon, or email us to introduce yourself.</p>
+      <div class="center">
+        <!-- TODO: replace "#" with the real Google Form URL -->
+        <a href="#" class="btn btn-primary" aria-disabled="true" title="Form link coming soon">Apply to Join <span class="todo">TODO: add form link</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Support (replaces "Partner with us" section — no confirmed partners yet) ===== -->
+  <section id="support" class="section-alt">
+    <div class="container">
+      <div class="support-box">
+        <p class="section-label">Support the Mission</p>
+        <h2 class="section-title" style="margin-bottom:1rem">Want to support us financially?</h2>
+        <p>Email <a href="mailto:info.4hopekenya@gmail.com" style="color:var(--color-primary);font-weight:600">info.4hopekenya@gmail.com</a>.</p>
+      </div>
+
+      <!--
+        ===================================================================
+        PARTNERS & SUPPORTERS TEMPLATE — commented out intentionally.
+        We have no confirmed partners yet (nobody has agreed in writing
+        to be listed). When a partner confirms, uncomment this block,
+        remove this comment, and list names only — no logos, no
+        addresses, no descriptions implying formal agreements, and never
+        name the Kenya student sites.
+
+        <div style="margin-top:3rem">
+          <h3 class="section-title center" style="font-size:1.4rem">Partners &amp; Supporters</h3>
+          <ul class="center" style="list-style:none;padding:0;display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap">
+            <li>Partner Name One</li>
+            <li>Partner Name Two</li>
+          </ul>
+        </div>
+        ===================================================================
+      -->
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="contact">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>4Hope Kenya</h4>
+      <p style="font-size:0.9rem;opacity:0.85;max-width:260px">Ride first. Then repair. Then engineer.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:info.4hopekenya@gmail.com">info.4hopekenya@gmail.com</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Follow</h4>
+      <ul>
+        <!-- TODO: replace "#" with real social URLs -->
+        <li><a href="#" aria-disabled="true">Instagram <span class="todo" style="color:#F3ECE2;border-color:rgba(243,236,226,0.5)">TODO</span></a></li>
+        <li><a href="#" aria-disabled="true">LinkedIn <span class="todo" style="color:#F3ECE2;border-color:rgba(243,236,226,0.5)">TODO</span></a></li>
+        <li><a href="#" aria-disabled="true">YouTube <span class="todo" style="color:#F3ECE2;border-color:rgba(243,236,226,0.5)">TODO</span></a></li>
+        <li><a href="#" aria-disabled="true">TikTok <span class="todo" style="color:#F3ECE2;border-color:rgba(243,236,226,0.5)">TODO</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Site</h4>
+      <ul>
+        <li><a href="curriculum.html">Curriculum</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+      </ul>
     </div>
   </div>
-</section>
-
-<section style="background:rgba(10,77,140,0.1);border-top:1px solid rgba(91,184,245,0.1);border-bottom:1px solid rgba(91,184,245,0.1)">
-  <div class="mission-grid">
-    <div class="mission-text">
-      <p class="section-label">Our Mission</p>
-      <h2 class="section-title">Built from <span>Nothing.</span><br>For Everyone.</h2>
-      <p>4Hope Kenya was founded after watching a previous program collapse due to mismanagement — while orphanage students in Nairobi kept showing up every week asking when the bikes would come. We could not walk away.</p>
-      <p>Every lesson is engineered to run on a single phone — no computers, no laptops, no infrastructure required. That design choice is what lets us deliver a real engineering curriculum to students who would otherwise have zero access to one.</p>
-      <div class="mission-quote">"These aren't statistics. These are real kids with real dreams. They just need the right people in their corner." — Syed Rahman, Founder</div>
-    </div>
-    <div class="mission-cards">
-      <div class="card"><div class="card-icon">📱</div><div class="card-title">Mobile-First Learning</div><div class="card-text">Every lesson works on a phone. Accessible to every student regardless of resources.</div></div>
-      <div class="card"><div class="card-icon">🚲</div><div class="card-title">Real Engineering</div><div class="card-text">CAD designs, physics calculations, and real parts from Nairobi suppliers. A real bike for real people.</div></div>
-      <div class="card"><div class="card-icon">🤝</div><div class="card-title">Community First</div><div class="card-text">Partnered with Children's Garden Home, Stuy Fusion FTC 479, EWB, Queens Community House and Creando Algo Especial.</div></div>
-      <div class="card"><div class="card-icon">🌱</div><div class="card-title">Sustainable Impact</div><div class="card-text">Students teach students. One of our first students now teaches younger kids the same skills we taught him.</div></div>
-    </div>
+  <p class="safeguarding-note">We protect student privacy: no student photos or names are shared without consent. We use Google Analytics to understand site traffic.</p>
+  <div class="footer-bottom">
+    <span>© 2026 4Hope Kenya</span>
   </div>
-</section>
-
-<section>
-  <div class="inner">
-    <p class="section-label" style="text-align:center">Real Work. Real Impact.</p>
-    <h2 class="section-title" style="text-align:center;margin-bottom:2.5rem">4Hope in <span>Action</span></h2>
-    <div class="photos-grid">
-      <div class="photo-card"><img src="images/space-to-nairobi.png" alt="From Space to the Streets of Nairobi — 4Hope Kenya"><div class="photo-overlay"><div class="photo-tag">The Journey</div>From a classroom idea to real engineering education on the ground in Nairobi</div></div>
-      <div class="photo-card"><img src="images/bike-render-2.png" alt="4Hope Kenya mountain bike CAD render — isometric view" style="object-position:56% 62%"><div class="photo-overlay"><div class="photo-tag">Engineering View</div>Isometric render showing frame geometry, wheel alignment and drivetrain layout</div></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="inner">
-    <div style="text-align:center;margin-bottom:4rem"><p class="section-label">Engineering for Kenya</p><h2 class="section-title">The <span>Bike Build</span></h2><p style="color:rgba(248,255,254,0.6);max-width:600px;margin:0 auto;line-height:1.7">Three bikes engineered for Kenyan terrain — rough roads, a $161 budget, repairable with basic tools.</p></div>
-    <div class="bike-grid">
-      <div class="bike-card"><div class="bike-icon">⛰️</div><div class="bike-name">Mountain Bike</div><div class="bike-desc">Aluminum Alloy 6061. 29" wheels. Mechanical disc brakes. Built for unpaved roads and heavy loads.</div><span class="bike-status status-done">✅ CAD Complete</span></div>
-      <div class="bike-card"><div class="bike-icon">🛣️</div><div class="bike-name">Touring Bike</div><div class="bike-desc">50kg cargo capacity. Designed for delivery and water collection routes across Nairobi.</div><span class="bike-status status-progress">🔄 In Progress</span></div>
-      <div class="bike-card"><div class="bike-icon">⚡</div><div class="bike-name">E-Bike</div><div class="bike-desc">Arduino motor control, regenerative braking. Solar powered for communities with no electricity.</div><span class="bike-status status-progress">🔄 Development</span></div>
-    </div>
-    <div style="text-align:center;margin-top:3rem"><a href="https://blue-nona-70.tiiny.site" target="_blank" class="btn-primary">🚲 Try Our Bike Builder Game</a></div>
-  </div>
-</section>
-
-<section style="background:rgba(26,140,78,0.08);border-top:1px solid rgba(91,214,138,0.1);border-bottom:1px solid rgba(91,214,138,0.1)">
-  <div class="students-inner">
-    <div class="students-text">
-      <p class="section-label">Who We Serve</p>
-      <h2 class="section-title">23 Students.<br><span>Two Orphanages.</span><br>One Mission.</h2>
-      <p>Children's Garden Home in Nairobi has cared for over 2,000 children since 2001 — providing shelter, meals and community to nearly 250 children today. Engineering education and access to computers is the one thing they haven't had — until now.</p>
-      <p>Less than 10% of Kenyans own transportation. A bike is survival infrastructure — water collection, school access, safety at night.</p>
-    </div>
-    <div class="ferdinand-card">
-      <div class="ferdinand-label">Student Story</div>
-      <div class="ferdinand-quote">"I fixed the weld myself. Like you taught me."</div>
-      <p style="color:rgba(248,255,254,0.6);font-size:0.9rem;line-height:1.7;margin-bottom:1.5rem">One of our students called at 2AM from Kenya. After learning to fix it himself, he called back three months later to say he had just taught a younger kid the same repair. That is why 4Hope exists.</p>
-      <div style="font-weight:600;color:var(--light-green);font-size:0.9rem">— A 4Hope Student, Nairobi</div>
-      <div style="font-size:0.8rem;color:rgba(248,255,254,0.5)">Now teaches younger students independently</div>
-    </div>
-  </div>
-</section>
-
-<section id="team-section">
-  <div class="inner">
-    <div style="text-align:center;margin-bottom:3rem"><p class="section-label">The Team</p><h2 class="section-title">Meet the <span>Team</span></h2></div>
-    <div class="team-grid">
-      <div class="team-card"><div class="team-avatar">👤</div><div class="team-name">Syed Rahman</div><div class="team-role">Founder & Lead</div></div>
-      <div class="team-card"><div class="team-avatar">⚙️</div><div class="team-name">Erica</div><div class="team-role">CAD & Engineering Lead</div></div>
-      <div class="team-card"><div class="team-avatar">🔩</div><div class="team-name">Faysal</div><div class="team-role">Parts Sourcing & Materials</div></div>
-      <div class="team-card"><div class="team-avatar">📋</div><div class="team-name">Twon</div><div class="team-role">Research & Docs</div></div>
-      <div class="team-card"><div class="team-avatar">💰</div><div class="team-name">Abrar</div><div class="team-role">Grants & Funding</div></div>
-      <div class="team-card"><div class="team-avatar">📣</div><div class="team-name">Brian</div><div class="team-role">Partnerships & Outreach</div></div>
-      <div class="team-card"><div class="team-avatar">💻</div><div class="team-name">Cassandra</div><div class="team-role">Senior Tech Lead</div></div>
-    </div>
-  </div>
-</section>
-
-<section style="background:rgba(10,77,140,0.1);border-top:1px solid rgba(91,184,245,0.1)">
-  <div style="max-width:800px;margin:0 auto;text-align:center">
-    <p class="section-label">Get Involved</p>
-    <h2 class="section-title">Help Us <span>Build</span></h2>
-    <p style="color:rgba(248,255,254,0.7);line-height:1.8;margin-bottom:2.5rem">4Hope Kenya runs entirely on volunteer effort and community support. Every contribution directly moves us closer to shipping the first bike to Kenya.</p>
-    <div class="support-grid">
-      <div class="card"><div class="support-icon">🛠️</div><div style="font-weight:600;margin-bottom:0.5rem">Volunteer</div><div style="font-size:0.85rem;color:rgba(248,255,254,0.5)">Engineers, coders, designers — join our team.</div></div>
-      <div class="card"><div class="support-icon">💡</div><div style="font-weight:600;margin-bottom:0.5rem">Mentor</div><div style="font-size:0.85rem;color:rgba(248,255,254,0.5)">30 min every 2 weeks. All remote. Real impact.</div></div>
-      <div class="card"><div class="support-icon">📢</div><div style="font-weight:600;margin-bottom:0.5rem">Spread the Word</div><div style="font-size:0.85rem;color:rgba(248,255,254,0.5)">Share our story. Follow our YouTube channel.</div></div>
-    </div>
-    <a href="donate.html" class="btn-primary">Support the Mission</a>
-  </div>
-</section>
-
-<section>
-  <div style="max-width:700px;margin:0 auto;text-align:center">
-    <p class="section-label">Reach Out</p>
-    <h2 class="section-title">Let's <span>Connect</span></h2>
-    <div class="contact-links">
-      <a href="mailto:info.4hopekenya@gmail.com" class="contact-link">✉️ info.4hopekenya@gmail.com</a>
-      <a href="tel:8625207609" class="contact-link">📞 862-520-7609</a>
-      <a href="https://www.youtube.com/@4HopeKenyaMentorshipProgram" target="_blank" class="contact-link">▶️ YouTube</a>
-      <a href="https://blue-nona-70.tiiny.site" target="_blank" class="contact-link">🚲 Bike Builder</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div><div class="footer-logo">4Hope Kenya</div><div class="footer-tagline">Same potential. Different access.</div></div>
-  <div class="footer-links"><a href="index.html#team-section">Team</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></div>
-  <div class="footer-right">Built by NYC students. For Nairobi students. 🌍</div>
 </footer>
+
+<script src="script.js"></script>
 </body>
 </html>
