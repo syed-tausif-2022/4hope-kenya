@@ -2,16 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://analytics.google.com; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <!-- Google Search Console verification -->
 <meta name="google-site-verification" content="l2ZcmYYLfAJ-4KXimwmOGnVy_1JES9dyr0ShLRb9XYY">
 <!-- Google Analytics (GA4) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-86GRNK6C8G"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-86GRNK6C8G');
-</script>
+<script src="assets/analytics.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Curriculum — 4Hope Kenya</title>
 <meta name="description" content="An 8-unit, mobile-first engineering curriculum covering bike mechanics, materials and design engineering.">
@@ -85,7 +82,7 @@
     <div class="container center">
       <h2 class="section-title">Think like an engineer</h2>
       <p class="section-intro center">Try our interactive Bike Builder game — the same tool we use to teach real engineering decisions about frame materials, wheel sizes, brakes and more.</p>
-      <a href="https://blue-nona-70.tiiny.site" target="_blank" rel="noopener" class="btn btn-primary">Play the Bike Builder Game</a>
+      <a href="https://blue-nona-70.tiiny.site" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Play the Bike Builder Game</a>
     </div>
   </section>
 </main>
@@ -109,7 +106,7 @@
       </ul>
     </div>
   </div>
-  <p class="safeguarding-note">We protect student privacy: no student photos or names are shared without consent. We use Google Analytics to understand site traffic.</p>
+  <p class="safeguarding-note">We protect student privacy: no student photos or names are shared without consent.</p>
   <div class="footer-bottom"><span>© 2026 4Hope Kenya</span></div>
 </footer>
 <script src="script.js"></script>
