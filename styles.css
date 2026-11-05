@@ -120,12 +120,8 @@ header.site-header {
   color: var(--color-secondary); text-decoration: none; display: flex;
   align-items: center; gap: 0.5rem;
 }
-.logo-mark {
-  width: 32px; height: 32px; border-radius: 8px;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-  display: flex; align-items: center; justify-content: center;
-  color: #fff; font-weight: 800; font-size: 0.9rem; flex-shrink: 0;
-}
+.logo-img { height: 44px; width: auto; display: block; flex-shrink: 0; }
+@media (max-width: 480px) { .logo-img { height: 36px; } }
 .nav-links { display: flex; gap: 1.75rem; list-style: none; margin: 0; padding: 0; }
 .nav-links a {
   text-decoration: none; color: var(--color-text); font-weight: 500;
@@ -313,6 +309,11 @@ footer.site-footer {
   max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem;
   display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem;
 }
+.footer-logo-chip {
+  display: inline-flex; background: var(--color-bg); border-radius: 8px;
+  padding: 0.3rem 0.5rem; margin-bottom: 0.6rem;
+}
+.footer-logo { height: 26px; width: auto; display: block; }
 .footer-col h4 { font-family: var(--font-display); margin: 0 0 0.75rem; font-size: 1rem; }
 .footer-col a { color: #F3ECE2; text-decoration: none; opacity: 0.85; }
 .footer-col a:hover { opacity: 1; text-decoration: underline; }
